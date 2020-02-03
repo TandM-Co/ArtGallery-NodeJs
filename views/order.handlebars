@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        td, th {
+            min-width: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Здравствуйте, {{user.name}} </h1>
+    <p>{{message}}</p>
+    <table border="1" cellpadding="5">
+      <tr>
+          <th>Название</th>
+          <th>Стоимость</th>
+          <th>Продавец</th>
+          <th>Покупатель</th>
+      </tr>
+      <tr>
+          <td>{{item.title}}</td>
+          <td>{{item.cost}} {{item.currency}}</td>
+          <td>{{item.user.name}}</td>
+          <td>{{user.name}}</td>
+      </tr>
+    </table>
+</body>
+</html>
