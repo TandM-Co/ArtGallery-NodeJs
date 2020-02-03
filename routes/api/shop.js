@@ -13,10 +13,10 @@ const validateRegisterInput = require('../../validation/register');
 const router = express.Router();
 
 //Load Schema
-const Profile = require('../../models/dbModels/Profile');
-const User = require('../../models/dbModels/User');
-const Comment = require('../../models/dbModels/Comment');
-const ShopItem = require('../../models/dbModels/ShopItem');
+const Profile = require('../../dbSchemas/dbModels/Profile');
+const User = require('../../dbSchemas/dbModels/User');
+const Comment = require('../../dbSchemas/dbModels/Comment');
+const ShopItem = require('../../dbSchemas/dbModels/ShopItem');
 
 /**
  * @swagger

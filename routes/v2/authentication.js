@@ -1,30 +1,38 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const validate = require('express-validation');
 
 const config = require('../../config/keys');
 const validateLoginInput = require('../../validation/login');
 const validateRegisterInput = require('../../validation/register');
-const Profile = require('../../models/dbModels/Profile');
-const UserV2 = require('../../models/v2/User');
+const Profile = require('../../dbSchemas/dbModels/Profile');
+const UserV2 = require('../../dbSchemas/v2/User');
+const {ErorrHandling} = require('../../models/index');
+const {errorHandler} = require('../../helpers/index');
+const {REGISTRATION_VALIDATION} = require('../../validation/index');
+const {errorLocalization} = require('../../middleware/index');
 
 const router = express.Router();
 
-router.post('/registration', async (req, res) => {
+router.post(
+  '/registration',
+  validate(REGISTRATION_VALIDATION),
+  errorLocalization(),
+  async (req, res, next) => {
   try {
-    const { errors, isValid} = validateRegisterInput(req.body);
+    //const { errors, isValid } = validateRegisterInput(req.body);
 
-    if (!isValid) {
-      return res.status(400).json(errors)
-    }
+    // if (!isValid) {
+    //   return res.status(400).json(errors)
+    // }
 
     const { login, email, password } = req.body;
 
     const user = await User.findOne({ login });
 
     if (user) {
-      errors.login = 'Login alredy exists';
-      return res.status(400).json(errors);
+      throw new ErorrHandling(400, 'Login alredy exists');
     }
 
     const newUser = new UserV2({
@@ -35,7 +43,7 @@ router.post('/registration', async (req, res) => {
 
     const salt = await bcrypt.genSalt(10);
 
-    const passwordHash = await bcrypt.hash(newUser.passport, salt);
+    const passwordHash = await bcrypt.hash(newUser.password, salt);
 
     newUser.password = passwordHash;
 
@@ -49,7 +57,7 @@ router.post('/registration', async (req, res) => {
 
     res.status(200).json({});
   } catch (err) {
-    console.log(err)
+    next(err);
   }
 });
 
@@ -96,6 +104,11 @@ router.post('/login', async (req, res) => {
   } catch (err) {
     console.log(err)
   }
+});
+
+router.use((err, req, res, next) => {
+  errorHandler(err, res);
+  next();
 });
 
 module.exports = router;

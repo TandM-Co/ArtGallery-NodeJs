@@ -4,8 +4,8 @@ ObjectId = require('mongodb').ObjectID;
 
 const router = express.Router();
 
-const Subscription = require('../../models/dbModels/Subscription');
-const Gallery = require('../../models/dbModels/UserWork');
+const Subscription = require('../../dbSchemas/dbModels/Subscription');
+const Gallery = require('../../dbSchemas/dbModels/UserWork');
 
 /**
  * @swagger

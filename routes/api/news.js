@@ -3,8 +3,8 @@ const passport = require('passport');
 
 const router = express.Router();
 
-const News = require('../../models/dbModels/News');
-const Comment = require('../../models/dbModels/Comment');
+const News = require('../../dbSchemas/dbModels/News');
+const Comment = require('../../dbSchemas/dbModels/Comment');
 
 /**
  * @swagger

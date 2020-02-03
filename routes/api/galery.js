@@ -5,10 +5,10 @@ const passport = require('passport');
 const router = express.Router();
 
 //Load Profile Schema
-const Profile = require('../../models/dbModels/Profile');
+const Profile = require('../../dbSchemas/dbModels/Profile');
 //Load User Schema
-const User = require('../../models/dbModels/User');
-const Comment = require('../../models/dbModels/Comment');
+const User = require('../../dbSchemas/dbModels/User');
+const Comment = require('../../dbSchemas/dbModels/Comment');
 
 /**
  * @swagger

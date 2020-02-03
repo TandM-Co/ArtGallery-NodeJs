@@ -1,8 +1,8 @@
 const express = require('express');
 const passport = require('passport');
 
-const ShopItem = require('../../models/dbModels/ShopItem');
-const Work = require('../../models/dbModels/Work');
+const ShopItem = require('../../dbSchemas/dbModels/ShopItem');
+const Work = require('../../dbSchemas/dbModels/Work');
 
 const router = express.Router();
 

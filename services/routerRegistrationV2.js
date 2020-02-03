@@ -1,6 +1,5 @@
 const authenticationRouter = require('../routes/v2/authentication');
 
-
 const URL_ROOT = '/api/v2';
 
 function routerRegistrationV2 (app) {

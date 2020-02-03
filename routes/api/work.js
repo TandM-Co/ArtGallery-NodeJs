@@ -15,11 +15,11 @@ const validateRegisterInput = require('../../validation/register');
 const router = express.Router();
 
 //User model
-const User = require('../../models/dbModels/User');
-const UserWork = require('../../models/dbModels/UserWork');
-const Profile = require('../../models/dbModels/Profile');
-const Work = require('../../models/dbModels/Work');
-const WorkRequest = require('../../models/dbModels/WorkRequest');
+const User = require('../../dbSchemas/dbModels/User');
+const UserWork = require('../../dbSchemas/dbModels/UserWork');
+const Profile = require('../../dbSchemas/dbModels/Profile');
+const Work = require('../../dbSchemas/dbModels/Work');
+const WorkRequest = require('../../dbSchemas/dbModels/WorkRequest');
 
 /**
  * @swagger

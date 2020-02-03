@@ -5,9 +5,9 @@ const passport = require('passport');
 const router = express.Router();
 
 //Load Profile Schema
-const Profile = require('../../models/dbModels/Profile');
+const Profile = require('../../dbSchemas/dbModels/Profile');
 //Load User Schema
-const User = require('../../models/dbModels/User');
+const User = require('../../dbSchemas/dbModels/User');
 
 /**
  * @swagger
@@ -66,7 +66,7 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
     .catch(err => console.log(err))
 });
 
-const UserWork = require('../../models/dbModels/UserWork');
+const UserWork = require('../../dbSchemas/dbModels/UserWork');
 
 /**
  * @swagger

@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 
 //const errorModel = require('../models/error');
-const Basket = require('../../models/dbModels/Basket');
+const Basket = require('../../dbSchemas/dbModels/Basket');
 
 /**
  * @swagger

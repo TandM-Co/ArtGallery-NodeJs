@@ -1,7 +1,7 @@
 {
-  "name": "kursowai",
-  "version": "1.0.0",
-  "description": "Kurs",
+  "name": "art-gallery-nodejs",
+  "version": "2.0.0",
+  "description": "",
   "main": "server.js",
   "engines": {
     "node": "10.0.0",
@@ -15,7 +15,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "author": "Alexanser T",
+  "author": "T&M",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -23,8 +23,10 @@
     "concurrently": "^4.1.0",
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "express-validation": "^1.0.3",
     "googleapis": "^46.0.0",
     "grpc": "^1.24.2",
+    "joi": "^14.3.1",
     "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.8.9",
     "mongoose-trigger": "^1.0.1",

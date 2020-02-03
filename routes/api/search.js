@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require('../../models/dbModels/User');
-const ShopItem = require('../../models/dbModels/ShopItem');
-const News = require('../../models/dbModels/News');
-const UserWork = require('../../models/dbModels/UserWork');
-const Work = require('../../models/dbModels/Work');
+const User = require('../../dbSchemas/dbModels/User');
+const ShopItem = require('../../dbSchemas/dbModels/ShopItem');
+const News = require('../../dbSchemas/dbModels/News');
+const UserWork = require('../../dbSchemas/dbModels/UserWork');
+const Work = require('../../dbSchemas/dbModels/Work');
 
 /**
  * @swagger

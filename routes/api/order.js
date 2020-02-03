@@ -1,11 +1,11 @@
 const express = require('express');
 const passport = require('passport');
 
-const Order = require('../../models/dbModels/Order');
-const Basket = require('../../models/dbModels/Basket');
+const Order = require('../../dbSchemas/dbModels/Order');
+const Basket = require('../../dbSchemas/dbModels/Basket');
 const router = express.Router();
 const transporter = require('../../mail/nodemailer');
-const ShopSchema = require('../../models/dbModels/ShopItem');
+const ShopSchema = require('../../dbSchemas/dbModels/ShopItem');
 
 /**
  * @swagger
