@@ -28,6 +28,7 @@
     "grpc": "^1.24.2",
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.4.0",
+    "localize": "^0.4.7",
     "mongoose": "^5.8.9",
     "mongoose-trigger": "^1.0.1",
     "nodemailer": "^6.4.2",

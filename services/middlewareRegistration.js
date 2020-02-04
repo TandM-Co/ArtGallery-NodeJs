@@ -2,8 +2,10 @@ const cors = require('cors');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const swaggerUi = require('swagger-ui-express');
+
 const swaggerDocument = require('../swagger-jsdoc');
 const {errorHandler} = require('../helpers/index');
+const {switchLocale} = require('../middleware/index');
 
 function middlewareRegistration(app) {
   app.use(cors());
@@ -17,10 +19,7 @@ function middlewareRegistration(app) {
 
   app.use(passport.initialize());
 
-  // app.use((err, req, res, next) => {
-  //   errorHandler(err, res);
-  //   next();
-  // });
+  app.use(switchLocale);
 
   require('../config/passport')(passport);
 }
